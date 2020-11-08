@@ -77,12 +77,12 @@ register_device_on_sns.delay(device)
 original project: https://github.com/intelligems/django-mobile-app
 
 <b>Create a .env file inside the settings folder with the following:</b>
+    # Resources #
+    
     # Default config
     DEBUG=True
     SECRET_KEY=''
     DATABASE_URL=''
-
-    # Resources #
 
     # AWS config
     AWS_REGION=''
