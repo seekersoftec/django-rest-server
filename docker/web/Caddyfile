@@ -1,6 +1,0 @@
-domain.tld {
-    root /var/www/project/folder
-    proxy / localhost:8000 {
-        transparent
-    }
-}
