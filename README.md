@@ -1,4 +1,4 @@
-<img src="./architecture.png" width="400" height="400">
+<img src="./architecture.png" width="300" height="300">
 <!-- # Django Mobile App <a href="https://www.intelligems.eu" target="_blank"><img src="https://intelligems.s3.amazonaws.com/intelligems_logo.png" width="40" height="40"></a> -->
 
 An easy to use project template in Django, focused on a custom backend for a mobile app. 
@@ -75,3 +75,33 @@ register_device_on_sns.delay(device)
 
 
 original project: https://github.com/intelligems/django-mobile-app
+
+<b>Create a .env file inside the settings folder with the following:</b>
+    # Default config
+    DEBUG=True
+    SECRET_KEY=''
+    DATABASE_URL=''
+
+    # Resources #
+
+    # AWS config
+    AWS_REGION=''
+    AWS_LOCATION=''
+    AWS_ACCESS_KEY_ID=''
+    AWS_SECRET_ACCESS_KEY=''
+    AWS_STORAGE_BUCKET_NAME=''
+
+    # SNS Config
+    AWS_IOS_APPLICATION_ARN=''
+    AWS_ANDROID_APPLICATION_ARN=''
+
+    # Mail config
+    MAILGUN_API_KEY=''
+    MAILGUN_SENDER_DOMAIN=''
+    DEFAULT_FROM_EMAIL=''
+
+    # Celery config
+    REDIS_URL=''
+
+    # Sentry config (optional)
+    SENTRY_DSN=''
