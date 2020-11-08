@@ -11,7 +11,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -223,23 +222,3 @@ if 'SENTRY_DSN' in os.environ:
         'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
     }
 
-
-
-
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'x*)@&#0a+)-iy$po+deovw!g+p5pgxhxr&p0#zrg(=aa%-bn0!'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-
-
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }

@@ -72,8 +72,6 @@ register_device_on_sns.delay(device)
 ```
 
 
-original project: https://github.com/intelligems/django-mobile-app
-
 <b>Create a .env file inside the settings folder with the following:</b>
 
     # Default config
@@ -102,3 +100,7 @@ original project: https://github.com/intelligems/django-mobile-app
 
     # Sentry config (optional)
     SENTRY_DSN=''
+
+
+
+original project: https://github.com/intelligems/django-mobile-app
