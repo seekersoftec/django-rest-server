@@ -70,3 +70,6 @@ For example:
 device = Device.objects.create(**data)
 register_device_on_sns.delay(device)
 ```
+
+
+original project: https://github.com/intelligems/django-mobile-app
