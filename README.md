@@ -3,10 +3,7 @@ Django REST-ful Server Template
 <img src="./architecture.png" width="250" height="250">
 
 An easy to use project template in Django, focused on a custom backend for a mobile app. 
-<!-- [![Build Status](https://travis-ci.org/intelligems/django-mobile-app.svg?branch=master)](https://travis-ci.org/intelligems/django-mobile-app) -->
-<!-- 
-# Repository unmaintained
-As Intelligems has stopped operations since Aug19, this repository remains unmaintained. Whoever may be interested to keep it up-to-date or extend it, DM [koslib](https://twitter.com/koslib) to arrange project transfer. -->
+
 
 # General
 This repo acts as a decent starting point for those who are looking for a custom backend deployment for their mobile app.
@@ -78,7 +75,6 @@ register_device_on_sns.delay(device)
 original project: https://github.com/intelligems/django-mobile-app
 
 <b>Create a .env file inside the settings folder with the following:</b>
-    # Resources #
 
     # Default config
     DEBUG=True
