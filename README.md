@@ -1,4 +1,4 @@
-<img src="./architecture.png" width="40" height="40">
+<img src="./architecture.png" width="400" height="400">
 <!-- # Django Mobile App <a href="https://www.intelligems.eu" target="_blank"><img src="https://intelligems.s3.amazonaws.com/intelligems_logo.png" width="40" height="40"></a> -->
 
 An easy to use project template in Django, focused on a custom backend for a mobile app. 
@@ -35,25 +35,25 @@ extend and keep working on it as a base for your new project.
 
 # How to use
 1. Clone this repo on your local machine: 
-```bash
-git clone https://github.com/intelligems/django-mobile-app
 ```
-2. We strongly advise to create a Python virtual environment and install the project requirements in there: 
-```bash
-mkvirtualenv <env-name> --python=`which python3`
+git clone https://github.com/seekersoftec/django-rest-server
+```
+2. Strongly advise to create a Python virtual environment and install the project requirements in there: 
+```
+pipenv shell
 ``` 
 3. Install project requirements inside your newly created local virtual environment:
-```bash
+```
 pip install -r requirements.txt
 ```
 4. Inside the `settings` path, create an `.env` file. Add in there all the environment variables that should be included
 in the project runtime.
 5. It's time to perform your first database migrations - no worries, we have included them too:
-```bash
+```
 python manage.py migrate
 ```
 6. Run the server!
-```bash
+```
 python manage.py runserver 0.0.0.0:80
 ```
 
