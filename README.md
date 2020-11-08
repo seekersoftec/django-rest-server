@@ -1,6 +1,6 @@
 Django REST-ful Server Template
 
-<img src="./architecture.png" width="300" height="300">
+<img src="./architecture.png" width="250" height="250">
 
 An easy to use project template in Django, focused on a custom backend for a mobile app. 
 <!-- [![Build Status](https://travis-ci.org/intelligems/django-mobile-app.svg?branch=master)](https://travis-ci.org/intelligems/django-mobile-app) -->
