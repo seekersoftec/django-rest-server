@@ -77,6 +77,7 @@ register_device_on_sns.delay(device)
     # Default config
     DEBUG=True
     SECRET_KEY=''
+    ALLOWED_HOSTS='0.0.0.0:80,127.0.0.1:80'
     DATABASE_URL=''
 
     # AWS config
@@ -100,6 +101,12 @@ register_device_on_sns.delay(device)
 
     # Sentry config (optional)
     SENTRY_DSN=''
+
+    # Logging config
+    LOGGING_LEVEL=''
+    MAIL_ADMINS_LOGGING_LEVEL=''
+
+
 
 
 
