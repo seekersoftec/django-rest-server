@@ -1,9 +1,8 @@
-Django REST-ful Server Template
+<h2>Django REST-ful Server Template</h2>
 
-<img src="./architecture.png" width="250" height="250">
+<img src="./architecture.png" alt="architecture" width="200" height="200">
 
 An easy to use project template in Django, focused on a custom backend for a mobile app. 
-
 
 # General
 This repo acts as a decent starting point for those who are looking for a custom backend deployment for their mobile app.
