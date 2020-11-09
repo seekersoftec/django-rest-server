@@ -121,27 +121,31 @@ AUTHENTICATION_BACKENDS = (
 REST_SESSION_LOGIN = False
 
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
+    # 'DEFAULT_VERSION':'v1',
+    # 'ALLOWED_VERSIONS':'v1,v2,v3',
+    # 'VERSION_PARAM':'version',
+    # 'DEFAULT_VERSIONING_CLASS': ['rest_framework.versioning.NamespaceVersioning',],
+    'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
-    ),
-    'DEFAULT_PARSER_CLASSES': (
-        (
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        [
             'rest_framework.parsers.JSONParser',
             'rest_framework.parsers.FormParser',
             'rest_framework.parsers.MultiPartParser'
-        )
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+        ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication'
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ),
+    ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend',]
 }
 
 
@@ -219,6 +223,7 @@ if 'SENTRY_DSN' in os.environ:
         'dsn': env('SENTRY_DSN', default=None),
         # If you are using git, you can also automatically configure the
         # release based on the git info.
-        'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
+        # 'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
+        'release': raven.fetch_git_sha(os.path.abspath(Path(BASE_DIR).resolve().parent)),
     }
 

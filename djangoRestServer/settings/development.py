@@ -1,4 +1,4 @@
-from basic import *
+from .basic import *
 
 env = environ.Env()
 environ.Env.read_env()  # the .env file should be in the settings path, not the manage.py path

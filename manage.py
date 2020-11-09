@@ -3,10 +3,11 @@
 import os
 import sys
 
+environment = 'development' # development | production
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangoRestServer.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangoRestServer.settings.{0}'.format(environment))
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

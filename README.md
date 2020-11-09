@@ -1,6 +1,6 @@
 <h2>Django REST-ful Server Template</h2>
 
-<img src="./architecture.png" alt="architecture" width="200" height="200">
+<img src="./architecture.png" alt="architecture" width="400" height="200">
 
 An easy to use project template in Django, focused on a custom backend for a mobile app. 
 
@@ -8,8 +8,7 @@ An easy to use project template in Django, focused on a custom backend for a mob
 This repo acts as a decent starting point for those who are looking for a custom backend deployment for their mobile app.
 It includes a full-serving django project which exposes a RESTful API, manages user instances and is highly configurable.
 
-In fact, this project is not a package that you can include in your project and use right-away, but it's a project template that you can download, 
-extend and keep working on it as a base for your new project.
+In fact, this project is not a package that you can include in your project and use right-away, but it's a project template that you can download, extend and keep working on it as a base for your new project.
 
 3rd-party apps it includes:
 - `django-storages`, to store files in AWS S3 (the most commonly used object storage)
@@ -107,6 +106,16 @@ register_device_on_sns.delay(device)
 
 
 
+Writing:
+Project Should be pluggable as much as possible, even up to API's i.e 
+- API(folder)[Define Endpoints]
+    v1.env
+    v2.env
 
+- Settings(folder)[Define Settings for development and production purposes]
+    basic.py
+    development.py
+    production.py
+    .env
 
 original project: https://github.com/intelligems/django-mobile-app
