@@ -1,1 +1,2 @@
 djangoRestServer/settings/.env
+*.db

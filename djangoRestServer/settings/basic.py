@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
     'rest_auth.registration',
-    'rest_framework_swagger',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -106,9 +106,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT = '{}/staticfiles'.format(BASE_DIR)
-print(STATIC_ROOT)
-STATIC_URL = '/static/'
+# STATIC_ROOT = '{}/static'.format(BASE_DIR)
+# STATIC_URL = '/static/'
 
 # Custom user model config
 AUTH_USER_MODEL = 'users.Account'
@@ -227,3 +226,9 @@ if 'SENTRY_DSN' in os.environ:
         'release': raven.fetch_git_sha(os.path.abspath(BASE_DIR)),
     }
 
+
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
