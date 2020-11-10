@@ -1,6 +1,6 @@
 <h2>Django REST-ful Server Template</h2>
 
-<img src="./architecture.png" alt="architecture" width="400" height="200">
+<img src="./architecture.png" alt="architecture" width="400" height="300">
 
 An easy to use project template in Django, focused on a custom backend for a mobile app. 
 

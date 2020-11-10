@@ -7,7 +7,7 @@ from pathlib import Path
 env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 ALLOWED_HOSTS = []
 
@@ -20,8 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     
-    # custom
+    # 3rd party apps
     'users.apps.UsersConfig',
 
     'allauth',
@@ -106,6 +107,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_ROOT = '{}/staticfiles'.format(BASE_DIR)
+print(STATIC_ROOT)
 STATIC_URL = '/static/'
 
 # Custom user model config
@@ -130,15 +132,14 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
     'DEFAULT_PARSER_CLASSES': [
-        [
-            'rest_framework.parsers.JSONParser',
-            'rest_framework.parsers.FormParser',
-            'rest_framework.parsers.MultiPartParser'
-        ]
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+        
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-        'rest_framework.authentication.BasicAuthentication'
+        'rest_framework.authentication.BasicAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -173,7 +174,7 @@ SOCIALACCOUNT_PROVIDERS = {
         'EXCHANGE_TOKEN': True,
         # 'LOCALE_FUNC': 'path.to.callable',
         'VERIFIED_EMAIL': False,
-        'VERSION': 'v2.4',
+        'VERSION': 'v7.0',
     },
     'google': {
         'SCOPE': [
@@ -223,7 +224,6 @@ if 'SENTRY_DSN' in os.environ:
         'dsn': env('SENTRY_DSN', default=None),
         # If you are using git, you can also automatically configure the
         # release based on the git info.
-        # 'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
-        'release': raven.fetch_git_sha(os.path.abspath(Path(BASE_DIR).resolve().parent)),
+        'release': raven.fetch_git_sha(os.path.abspath(BASE_DIR)),
     }
 

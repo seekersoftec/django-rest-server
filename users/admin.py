@@ -1,3 +1,13 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 
-# Register your models here.
+from .forms import AccountChangeForm
+from .models import Account
+
+
+class AccountsAdmin(UserAdmin):
+    form = AccountChangeForm
+    list_display = ('username', 'first_name', 'last_name','email', 'last_login')
+
+
+admin.site.register(Account, AccountsAdmin)

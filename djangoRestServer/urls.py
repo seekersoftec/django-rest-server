@@ -1,17 +1,29 @@
 from django.contrib import admin
 from django.urls import include, re_path
-from rest_framework.routers import SimpleRouter
+from rest_framework import routers
 from rest_framework_swagger.views import get_swagger_view
-
 from users.api.auth_adapters import FacebookLogin, InstagramLogin
 
+# 
+api_version = 'api/v1'
 
-schema_view = get_swagger_view(title='App API')
+schema_view = get_swagger_view(title='REST App API version: {0}'.format(api_version.split('/')[1]))
 
-router = SimpleRouter()
+router = routers.SimpleRouter()
 #  Register API routes using `router.register()`
 
-api_version = 'api/v1'
+# Admin
+# router.register(r'^admin/', admin.site.urls, name='admin')
+# Schema
+# router.register(r'^$', schema_view)
+# API Endpoints
+# router.register(r'^{0}/rest-auth/'.format(api_version), include('rest_auth.urls'))
+# router.register(r'^{0}/rest-auth/registration/'.format(api_version), include('rest_auth.registration.urls'))
+# router.register(r'^{0}/rest-auth/facebook/$'.format(api_version), FacebookLogin.as_view(), name='fb_login')
+# router.register(r'^{0}/rest-auth/instagram/$'.format(api_version), InstagramLogin.as_view(), name='instagram_login')
+# router.register(r'^{0}/accounts/'.format(api_version), include('users.api.urls'))
+
+
 
 urlpatterns = [
     # Admin
@@ -25,3 +37,6 @@ urlpatterns = [
     re_path(r'^{0}/rest-auth/instagram/$'.format(api_version), InstagramLogin.as_view(), name='instagram_login'),
     re_path(r'^{0}/accounts/'.format(api_version), include('users.api.urls')),
 ]
+
+
+# urlpatterns += router.urls

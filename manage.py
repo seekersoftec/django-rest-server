@@ -3,7 +3,7 @@
 import os
 import sys
 
-environment = 'development' # development | production
+environment = 'development' #env('ENVIRONMENT') # development | production
 
 def main():
     """Run administrative tasks."""
