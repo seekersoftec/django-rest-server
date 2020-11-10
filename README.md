@@ -15,7 +15,7 @@ In fact, this project is not a package that you can include in your project and 
 - `django-allauth`, for social media authentication
 - `django-anymail[mailgun]`, to send transactional emails using Mailgun (first 10k messages/month are free)
 - `djangorestframework`, for the RESTful API
-- `django-rest-swagger`, to automatically generate documentation for your RESTful API endpoints
+- `drf-yasg`, to automatically generate documentation for your RESTful API endpoints
 - `django-rest-auth`, to provide social media authentication over the API
 - `django-filters`, which provides filtering capabilities in the DRF API views
 - `django-guardian`, for custom object or model level permissions
